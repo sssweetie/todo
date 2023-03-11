@@ -1,28 +1,46 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import deleteButton from "../../../../assets/img/delete.png";
 
-export const Title = styled.h3``;
+export const Title = styled.h3.attrs(() => ({ type: "text" }))
+<{isCompleted: boolean;}>`
+  ${(isCompleted) =>
+    isCompleted &&
+    css`
+      text-decoration: line-through;
+    `}
+`;
 
-export const Completed = styled.input.attrs(() => ({ type: "checkbox" }))`
+export const Completed = styled.input.attrs(() => ({
+  type: "checkbox",
+}))`
   outline: none;
   margin: 0;
   cursor: pointer;
-  visibility: none;
+  visibility: hidden;
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
 `;
 
 export const Delete = styled.img.attrs(() => ({ src: deleteButton }))`
-  visibility: none;
+  visibility: hidden;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
-  min-width: 16rem;
+  min-width: 12rem;
+  align-items: center;
+  height: 3rem;
+
   &:hover {
     ${Completed} {
-      visibility: block;
+      visibility: visible;
     }
     ${Delete} {
-      visibility: block;
+      visibility: visible;
     }
   }
 `;
