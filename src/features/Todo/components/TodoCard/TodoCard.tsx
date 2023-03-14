@@ -13,15 +13,10 @@ interface Props {
 }
 
 export const TodoCard = ({ deleteTodo, todo }: Props) => {
-  const [checked, setChecked] = useState(false);
-
   return (
     <S.Wrapper>
       <S.Title isCompleted={todo.isCompleted}>{todo.title}</S.Title>
-      <S.Completed
-        defaultChecked={todo.isCompleted}
-        onChange={() => setChecked(!checked)}
-      ></S.Completed>
+      <S.Completed defaultChecked={todo.isCompleted}></S.Completed>
       <S.Delete onClick={() => deleteTodo(todo.id)}></S.Delete>
     </S.Wrapper>
   );

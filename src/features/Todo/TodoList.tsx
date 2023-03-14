@@ -4,13 +4,17 @@ import { Todo } from "./components/TodoCard/TodoCard";
 import * as S from "./styled";
 
 type TodoList = {
-  children?: any; //rename
   todos: Array<Todo>;
 };
 
-export const TodoList = ({ children, todos }: TodoList) => {
-  const deleteTodo = () => {
-    return;
+export const TodoList = ({ todos }: TodoList) => {
+
+  const request = async () => {
+    
+  }
+
+  const deleteTodo = async () => {
+    const data = await request();
   };
 
   return (

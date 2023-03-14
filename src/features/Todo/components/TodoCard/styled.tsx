@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 import deleteButton from "../../../../assets/img/delete.png";
 
-export const Title = styled.h3.attrs(() => ({ type: "text" }))
-<{isCompleted: boolean;}>`
-  ${(isCompleted) =>
+export const Title = styled.h3.attrs(() => ({ type: "text" }))<{
+  isCompleted: boolean;
+}>`
+  ${({ isCompleted }) =>
     isCompleted &&
     css`
       text-decoration: line-through;
