@@ -2,7 +2,12 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "",
-  "main": "App.ts",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.2"
+  },
+  "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +18,7 @@
   ],
   "author": "Alex T.",
   "license": "ISC",
-  "type": "module"
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }

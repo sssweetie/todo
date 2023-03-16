@@ -5,6 +5,7 @@ export const todoRouter = Router();
 todoRouter.get("/todo/getAll", async (req, res) => {
   try {
     const todos = await TodoController.getAll();
+    console.log("getAll");
     res.status(200).send(todos);
   } catch (error) {
     console.error(error);
