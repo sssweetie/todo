@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./styled";
 
 export interface Todo {
-  id: string;
+  _id: string;
   title: string;
   isCompleted: boolean;
 }
@@ -17,7 +17,7 @@ export const TodoCard = ({ deleteTodo, todo }: Props) => {
     <S.Wrapper>
       <S.Title isCompleted={todo.isCompleted}>{todo.title}</S.Title>
       <S.Completed defaultChecked={todo.isCompleted}></S.Completed>
-      <S.Delete onClick={() => deleteTodo(todo.id)}></S.Delete>
+      <S.Delete onClick={() => deleteTodo(todo._id)}></S.Delete>
     </S.Wrapper>
   );
 };

@@ -1,20 +1,25 @@
 import { model, Schema } from "mongoose";
-
 interface Todo {
   _id: string;
   title: string;
   isCompleted: boolean;
 }
-
-const todoSchema = new Schema<Todo>({
-  title: {
-    type: String,
-    required: true,
+const todoSchema = new Schema<Todo>(
+  {
+    _id: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    isCompleted: {
+      type: Boolean,
+      default: false,
+    },
   },
-  isCompleted: {
-    type: Boolean,
-    default: false,
-  },
-});
+  { collection: "todos" }
+);
 
-export const TodoModel = model<Todo>("Todo", todoSchema);
+export const TodoModel = model<Todo>("todo", todoSchema);
