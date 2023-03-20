@@ -9,6 +9,7 @@ export interface Todo {
 
 interface Props {
   deleteTodo: (id: string) => void;
+  updateTodo: (data: any) => void;
   todo: Todo;
 }
 

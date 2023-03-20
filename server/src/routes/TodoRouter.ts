@@ -31,6 +31,7 @@ todoRouter.post("/", async (req, res) => {
 todoRouter.delete("/:id", async (req, res) => {
   try {
     await TodoController.delete(req.params.id);
+    res.sendStatus(200);
   } catch (error) {
     console.error(error);
     res.sendStatus(422);
