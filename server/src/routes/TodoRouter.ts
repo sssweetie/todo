@@ -23,6 +23,7 @@ todoRouter.put("/", async (req, res) => {
 todoRouter.post("/", async (req, res) => {
   try {
     await TodoController.create(req.body);
+    res.sendStatus(200);
   } catch (error) {
     console.error(error);
     res.sendStatus(422);

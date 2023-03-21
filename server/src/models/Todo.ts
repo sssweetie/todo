@@ -6,10 +6,10 @@ interface Todo {
 }
 const todoSchema = new Schema<Todo>(
   {
-    _id: {
-      type: String,
-      required: true,
-    },
+    // _id: {
+    //   type: String,
+    //   required: true,
+    // }, trying to avoid passing the random id
     title: {
       type: String,
       required: true,

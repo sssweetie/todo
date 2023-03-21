@@ -13,7 +13,7 @@ interface Props {
   todo: Todo;
 }
 
-export const TodoCard = ({ deleteTodo, todo }: Props) => {
+export const TodoCard = ({ deleteTodo, updateTodo, todo }: Props) => {
   return (
     <S.Wrapper>
       <S.Title isCompleted={todo.isCompleted}>{todo.title}</S.Title>

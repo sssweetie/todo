@@ -4,6 +4,7 @@ import deleteButton from "../../../../assets/img/delete.png";
 export const Title = styled.h3.attrs(() => ({ type: "text" }))<{
   isCompleted: boolean;
 }>`
+  cursor: pointer;
   ${({ isCompleted }) =>
     isCompleted &&
     css`
