@@ -1,10 +1,16 @@
 import styled, { css } from "styled-components";
 import deleteButton from "../../../../assets/img/delete.png";
 
-export const Title = styled.h3.attrs(() => ({ type: "text" }))<{
+export const Title = styled.input.attrs(() => ({ type: "text" }))<{
   isCompleted: boolean;
 }>`
   cursor: pointer;
+  border: none;
+  width: 80%;
+  &:active,
+  &:focus {
+    outline: none;
+  }
   ${({ isCompleted }) =>
     isCompleted &&
     css`

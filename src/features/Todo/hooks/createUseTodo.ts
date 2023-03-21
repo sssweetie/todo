@@ -51,7 +51,11 @@ export const createUseTodo =
     };
 
     useEffect(() => {
+      
       getAllTodos();
+      return () => {
+        console.log("Cleaning function");
+      };
     }, []);
     return { createTodo, updateTodo, deleteTodo, getAllTodos, todos };
   };
