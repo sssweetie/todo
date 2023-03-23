@@ -1,15 +1,9 @@
 import React from "react";
 import * as S from "./styled";
-
-export interface Todo {
-  _id: string;
-  title: string;
-  isCompleted: boolean;
-}
-
+import { Todo, UpdateTodo } from "../../../../../libs/features/src/todo";
 interface Props {
   deleteTodo: (id: string) => void;
-  updateTodo: (data: Todo) => void;
+  updateTodo: (data: UpdateTodo) => void;
   todo: Todo;
 }
 

@@ -1,4 +1,4 @@
-import { createToDoApi } from "./createTodoApi";
-import { httpClient } from "../../http-client/httpClient";
+import { httpClient } from "../../httpClient";
+import { createToDoApi } from "../../createTodoApi";
 
 export const todoApi = createToDoApi(httpClient);

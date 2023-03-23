@@ -8,7 +8,7 @@ export const TodoList = () => {
   const { createTodo, updateTodo, deleteTodo, todos } = useTodo();
   return (
     <S.Wrapper>
-      <TodoForm createTodo={createTodo}></TodoForm>
+      <TodoForm action={{ createTodo }}></TodoForm>
       {todos?.map((todo) => (
         <TodoCard
           todo={todo}

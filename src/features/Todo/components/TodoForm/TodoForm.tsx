@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+import { CreateTodo } from "../../../../../libs/features/src/todo";
+import { useNewTodoForm } from "./hooks";
 import * as S from "./styled";
 
-interface Props {
-  createTodo: (data: any) => void;
+export interface Action {
+  createTodo: (data: CreateTodo) => void;
 }
 
-export const TodoForm = ({ createTodo }: Props) => {
-  const { reset, register, handleSubmit } = useForm();
+interface Props {
+  action: Action;
+}
 
-  const onSubmit = (data: any) => {
-    createTodo(data);
-    reset();
-  };
+export const TodoForm = ({ action }: Props) => {
+  const { register, handleSubmit } = useNewTodoForm(action);
 
   return (
     <S.Form
-      onSubmit={handleSubmit(onSubmit)} //get the form data
+      onSubmit={handleSubmit} //get the form data
     >
       <S.Input
         {...register("title")} // get input value on submit

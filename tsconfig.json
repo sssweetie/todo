@@ -16,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/assets/fonts/fonts.d.ts"]
+  "include": ["src", "src/assets/fonts.d.ts", "src/assets/img", "libs"]
 }

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-interface TodoApi {
-  delete: (id: string) => Promise<void>;
-  update: (data: any) => Promise<any>;
-  create: (data: any) => Promise<void>;
-  getAll: () => Promise<any>;
-}
-
+import {
+  UpdateTodo,
+  CreateTodo,
+} from "../../../../libs/features/src/todo/types";
+import { TodoApi } from "../../../createTodoApi";
 type Deps = {
   todoApi: TodoApi;
 };
@@ -31,7 +29,7 @@ export const createUseTodo =
         getAllTodos();
       }
     };
-    const updateTodo = async (data: any) => {
+    const updateTodo = async (data: UpdateTodo) => {
       try {
         await todoApi.update(data);
       } catch (error) {
@@ -40,7 +38,7 @@ export const createUseTodo =
         getAllTodos();
       }
     };
-    const createTodo = async (data: any) => {
+    const createTodo = async (data: CreateTodo) => {
       try {
         await todoApi.create(data);
       } catch (error) {
@@ -51,7 +49,6 @@ export const createUseTodo =
     };
 
     useEffect(() => {
-      
       getAllTodos();
       return () => {
         console.log("Cleaning function");
