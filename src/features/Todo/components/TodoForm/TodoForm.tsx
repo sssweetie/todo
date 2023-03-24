@@ -1,5 +1,5 @@
 import React from "react";
-import { CreateTodo } from "../../../../../libs/features/src/todo";
+import { CreateTodo } from "../../../../../libs/features/todo";
 import { useNewTodoForm } from "./hooks";
 import * as S from "./styled";
 

@@ -4,7 +4,7 @@ import deleteButton from "../../../../assets/img/delete.png";
 export const Title = styled.input.attrs(() => ({ type: "text" }))<{
   isCompleted: boolean;
 }>`
-  cursor: pointer;  
+  cursor: pointer;
   border: none;
   width: 80%;
   &:active,

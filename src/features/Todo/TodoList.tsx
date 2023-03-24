@@ -5,10 +5,11 @@ import { useTodo } from "./hooks/useTodo";
 import { TodoForm } from "./components/TodoForm";
 
 export const TodoList = () => {
-  const { createTodo, updateTodo, deleteTodo, todos } = useTodo();
+  const { createTodo, updateTodo, deleteTodo, todos, isLoading } = useTodo();
   return (
     <S.Wrapper>
       <TodoForm action={{ createTodo }}></TodoForm>
+      {isLoading ? <p>Loading</p> : null}
       {todos?.map((todo) => (
         <TodoCard
           todo={todo}

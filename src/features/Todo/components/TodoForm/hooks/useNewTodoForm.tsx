@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { CreateTodo } from "../../../../../../libs/features/src/todo";
+import { CreateTodo } from "../../../../../../libs/features/todo";
 import { Action } from "../TodoForm";
 export const useNewTodoForm = ({ createTodo }: Action) => {
   const { reset, register, handleSubmit } = useForm<CreateTodo>();
