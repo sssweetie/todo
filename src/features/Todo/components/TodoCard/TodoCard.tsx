@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styled";
 import { Todo, UpdateTodo } from "../../../../../libs/features/todo";
+
 interface Props {
   deleteTodo: (id: string) => void;
   updateTodo: (data: UpdateTodo) => void;
@@ -10,7 +11,7 @@ interface Props {
 export const TodoCard = ({ deleteTodo, updateTodo, todo }: Props) => {
   return (
     <S.Wrapper>
-      <S.Title
+      <S.InputTitle
         isCompleted={todo.isCompleted}
         onInput={(e) =>
           updateTodo({
@@ -20,8 +21,8 @@ export const TodoCard = ({ deleteTodo, updateTodo, todo }: Props) => {
           })
         }
         defaultValue={todo.title}
-      ></S.Title>
-      <S.Completed
+      />
+      <S.CheckboxIsCompleted
         defaultChecked={todo.isCompleted}
         onChange={() => {
           updateTodo({
@@ -30,8 +31,8 @@ export const TodoCard = ({ deleteTodo, updateTodo, todo }: Props) => {
             isCompleted: !todo.isCompleted,
           });
         }}
-      ></S.Completed>
-      <S.Delete onClick={() => deleteTodo(todo._id)}></S.Delete>
+      />
+      <S.DeleteButton onClick={() => deleteTodo(todo._id)} />
     </S.Wrapper>
   );
 };

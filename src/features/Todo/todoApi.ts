@@ -1,14 +1,14 @@
 import { AxiosInstance } from "axios";
-import { CreateTodo, UpdateTodo, GetTodos } from "../libs/features/todo";
+import { CreateTodo, UpdateTodo, GetTodos } from "../../../libs/features/todo";
 
 export interface TodoApi {
   delete: (id: string) => Promise<void>;
   update: (data: UpdateTodo) => Promise<GetTodos>;
   create: (data: CreateTodo) => Promise<void>;
-  getAll: () => Promise<never[]>;
+  getAll: () => Promise<GetTodos>;
 }
 
-export const createToDoApi = (httpClient: AxiosInstance): TodoApi => ({
+export const todoApi = (httpClient: AxiosInstance): TodoApi => ({
   create: async (data: CreateTodo) => {
     await httpClient.post("/todo", data);
   },
@@ -23,7 +23,7 @@ export const createToDoApi = (httpClient: AxiosInstance): TodoApi => ({
     return response.data;
   },
   getAll: async () => {
-    const response = await httpClient.get("/todo/getAll");
+    const response = await httpClient.get<GetTodos>("/todo/getAll");
     return response.data;
   },
 });

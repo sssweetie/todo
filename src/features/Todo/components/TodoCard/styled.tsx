@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import deleteButton from "../../../../assets/img/delete.png";
 
-export const Title = styled.input.attrs(() => ({ type: "text" }))<{
+export const InputTitle = styled.input.attrs(() => ({ type: "text" }))<{
   isCompleted: boolean;
 }>`
   cursor: pointer;
@@ -18,7 +18,7 @@ export const Title = styled.input.attrs(() => ({ type: "text" }))<{
     `}
 `;
 
-export const Completed = styled.input.attrs(() => ({
+export const CheckboxIsCompleted = styled.input.attrs(() => ({
   type: "checkbox",
 }))`
   outline: none;
@@ -30,7 +30,7 @@ export const Completed = styled.input.attrs(() => ({
   height: 16px;
 `;
 
-export const Delete = styled.img.attrs(() => ({ src: deleteButton }))`
+export const DeleteButton = styled.img.attrs(() => ({ src: deleteButton }))`
   visibility: hidden;
   width: 20px;
   height: 20px;
@@ -44,10 +44,10 @@ export const Wrapper = styled.div`
   height: 3rem;
 
   &:hover {
-    ${Completed} {
+    ${CheckboxIsCompleted} {
       visibility: visible;
     }
-    ${Delete} {
+    ${DeleteButton} {
       visibility: visible;
     }
   }
