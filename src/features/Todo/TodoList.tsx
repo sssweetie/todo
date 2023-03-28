@@ -19,7 +19,7 @@ export const TodoList: React.FC = () => {
           todo={todo}
           deleteTodo={deleteTodo}
           updateTodo={updateTodo}
-          key={todo["_id"]}
+          key={todo._id}
         ></TodoCard>
       ))}
       isLoading={isLoading}

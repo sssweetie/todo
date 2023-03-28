@@ -8,15 +8,15 @@ interface Props {
   todo: Todo;
 }
 
-export const TodoCard = ({ deleteTodo, updateTodo, todo }: Props) => {
+export const TodoCard: React.FC<Props> = ({ deleteTodo, updateTodo, todo }) => {
   return (
     <S.Wrapper>
       <S.InputTitle
         isCompleted={todo.isCompleted}
-        onInput={(e) =>
+        onChange={(e) =>
           updateTodo({
             _id: todo._id,
-            title: (e.target as HTMLInputElement).value,
+            title: e.target.value,
             isCompleted: todo.isCompleted,
           })
         }
