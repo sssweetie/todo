@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import deleteButton from "../../../../assets/img/delete.png";
+import styled, { css } from 'styled-components';
+import deleteButton from '../../../../assets/img/delete.png';
 
-export const InputTitle = styled.input.attrs(() => ({ type: "text" }))<{
+export const InputTitle = styled.input.attrs(() => ({ type: 'text' }))<{
   isCompleted: boolean;
 }>`
   cursor: pointer;
@@ -19,7 +19,7 @@ export const InputTitle = styled.input.attrs(() => ({ type: "text" }))<{
 `;
 
 export const CheckboxIsCompleted = styled.input.attrs(() => ({
-  type: "checkbox",
+  type: 'checkbox',
 }))`
   outline: none;
   margin: 0;

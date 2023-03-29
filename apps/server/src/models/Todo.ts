@@ -1,9 +1,6 @@
-import { model, Schema } from "mongoose";
-interface Todo {
-  _id: string;
-  title: string;
-  isCompleted: boolean;
-}
+import { model, Schema } from 'mongoose';
+import { Todo } from '@todonx/types';
+
 const todoSchema = new Schema<Todo>(
   {
     title: {
@@ -15,7 +12,7 @@ const todoSchema = new Schema<Todo>(
       default: false,
     },
   },
-  { collection: "todos" }
+  { collection: 'todos' }
 );
 
-export const TodoModel = model<Todo>("todo", todoSchema);
+export const TodoModel = model<Todo>('todo', todoSchema);

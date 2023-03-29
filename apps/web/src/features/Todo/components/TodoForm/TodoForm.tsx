@@ -7,12 +7,8 @@ export interface Action {
   createTodo: (data: CreateTodo) => void;
 }
 
-interface Props {
-  action: Action;
-}
-
-export const TodoForm = ({ action }: Props) => {
-  const { register, handleSubmit } = useNewTodoForm(action);
+export const TodoForm: React.FC<Action> = ({ createTodo }) => {
+  const { register, handleSubmit } = useNewTodoForm(createTodo);
 
   return (
     <S.Form
