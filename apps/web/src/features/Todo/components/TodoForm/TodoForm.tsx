@@ -3,11 +3,13 @@ import { CreateTodo } from '@todonx/types';
 import { useNewTodoForm } from './hooks';
 import * as S from './styled';
 
-export interface Action {
-  createTodo: (data: CreateTodo) => void;
+export type CreateTodoAction = (data: CreateTodo) => void;
+
+export interface Props {
+  createTodo: CreateTodoAction;
 }
 
-export const TodoForm: React.FC<Action> = ({ createTodo }) => {
+export const TodoForm: React.FC<Props> = ({ createTodo }) => {
   const { register, handleSubmit } = useNewTodoForm(createTodo);
 
   return (
